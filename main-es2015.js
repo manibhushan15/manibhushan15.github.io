@@ -406,13 +406,11 @@ class DoneListComponent {
         this.allDone = [];
     }
     ngOnInit() {
-        debugger;
         this.allDone = this._taskService.doneList;
         this.allToDo = this._taskService.toDoList;
         this.createToDo(this.index);
     }
     createToDo(index) {
-        //this.index=index;
         this.allToDo.push(this.allDone[index]);
         this._taskService.toDoList = this.allToDo;
         this.allDone[index] = null;
@@ -422,7 +420,6 @@ class DoneListComponent {
         }
         this._taskService.doneList = this.allDone;
         this.showToDoComp.emit();
-        //  this.dataSource = new MatTableDataSource(this._taskService.toDoList);
     }
 }
 DoneListComponent.ɵfac = function DoneListComponent_Factory(t) { return new (t || DoneListComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_services_todo_task_service__WEBPACK_IMPORTED_MODULE_1__["TodoTaskService"])); };
@@ -602,7 +599,6 @@ class ToDoListComponent {
         this.newTask.emit();
     }
     doneTask(index) {
-        debugger;
         this.showDoneComp = false;
         if (!this.showDoneList) {
             this.allDone.push(this.allToDo[index]);

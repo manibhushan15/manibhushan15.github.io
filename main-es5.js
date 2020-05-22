@@ -774,7 +774,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(DoneListComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          debugger;
           this.allDone = this._taskService.doneList;
           this.allToDo = this._taskService.toDoList;
           this.createToDo(this.index);
@@ -782,7 +781,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "createToDo",
         value: function createToDo(index) {
-          //this.index=index;
           this.allToDo.push(this.allDone[index]);
           this._taskService.toDoList = this.allToDo;
           this.allDone[index] = null;
@@ -793,7 +791,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           }
 
           this._taskService.doneList = this.allDone;
-          this.showToDoComp.emit(); //  this.dataSource = new MatTableDataSource(this._taskService.toDoList);
+          this.showToDoComp.emit();
         }
       }]);
 
@@ -1189,7 +1187,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "doneTask",
         value: function doneTask(index) {
-          debugger;
           this.showDoneComp = false;
 
           if (!this.showDoneList) {
